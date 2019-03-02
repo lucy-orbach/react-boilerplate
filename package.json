@@ -4,6 +4,7 @@
   "description": "template for react project",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lucy Orbach",
@@ -16,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/lucy-orbach/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/lucy-orbach/react-boilerplate#readme"
+  "homepage": "https://github.com/lucy-orbach/react-boilerplate#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
 }
