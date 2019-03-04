@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { hot } from 'react-hot-loader';
-import './app.css';
+import 'src/app.css';
+// import Warning from 'src/warnings/Warning';
+const Warning = React.lazy(() => import('./warnings/Warning'));
 
 // top-level React component
 const App = () => {
@@ -13,6 +15,11 @@ const App = () => {
 				<button onClick={() => setCounter(counter+1) }>Add more!</button>
 				<button onClick={() => setCounter(0) }>Reset</button>
 			</div>
+			{counter > 10 &&
+				<React.Suspense fallback={"oops"}>
+					<Warning/>
+				</React.Suspense>
+			}
 		</div>
 	);
 
