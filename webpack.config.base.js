@@ -19,17 +19,36 @@ module.exports = {
 	}, // results in -> .dist/app.bundle.js
 	module: {
 		rules: [
+
 			{
 				test: /\.js$/,
-				exclude: /node_modules/,
 				loader: 'babel-loader',
+				exclude: /node_modules/,
 				options: {
-					presets: ['@babel/preset-env', '@babel/preset-react']
+					presets: [
+						'@babel/preset-env', // new syntax (es6)
+						'@babel/preset-react' // to read jsx
+					],
+					plugins: [
+						'react-hot-loader/babel', // injects component chnges without reloading/changing state
+						"@babel/plugin-proposal-class-properties" // for new proposed syntax
+					]
 				}
+			},
+
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+				exclude: /node_modules/
 			}
 		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({ template: './src/index.html' })
-	]
+	],
+	resolve: {
+		alias: {
+			src: path.resolve(__dirname, 'src'),
+		}
+	}
 };
