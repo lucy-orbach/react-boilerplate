@@ -4,7 +4,8 @@
   "description": "template for react project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack  --config webpack.config.prod.js",
+    "dev": "webpack --watch --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lucy Orbach",
@@ -23,10 +24,12 @@
     "@babel/core": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
