@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [ "@babel/preset-env", {// new syntax (es6)
+        "targets": [
+          "last 2 versions",
+          "not dead",
+          "not < 2%"
+          //"not ie 11"
+        ],
+        "useBuiltIns": "entry"
+    }],
+    "@babel/preset-react" // to read jsx
+  ],
+  "plugins": [
+    "react-hot-loader/babel", // injects component chnges without reloading/changing state
+    "@babel/plugin-proposal-class-properties", // for new proposed syntax
+    "@babel/plugin-syntax-dynamic-import" //React.lazy
+  ],
+  "env": {
+    "test": {
+      "plugins": ["dynamic-import-node"]
+    }
+  }
+}

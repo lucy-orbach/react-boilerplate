@@ -19,31 +19,11 @@ module.exports = {
 	}, // results in -> .dist/app.bundle.js
 	module: {
 		rules: [
-
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
-				exclude: /node_modules/,
-				options: {
-					presets: [
-						['@babel/preset-env', {// new syntax (es6)
-							targets: [
-								'last 2 versions',
-								'not dead',
-								'not < 2%',
-								//'not ie 11'
-							]
-						}],
-						'@babel/preset-react' // to read jsx
-					],
-					plugins: [
-						'react-hot-loader/babel', // injects component chnges without reloading/changing state
-						"@babel/plugin-proposal-class-properties", // for new proposed syntax
-						"@babel/plugin-syntax-dynamic-import", //React.lazy
-					]
-				}
+				exclude: /node_modules/
 			},
-
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader'],
