@@ -19,7 +19,18 @@
   },
   "homepage": "https://github.com/lucy-orbach/react-boilerplate#readme",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "prop-types": "^15.7.2"
   }
 }

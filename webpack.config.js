@@ -15,5 +15,17 @@ module.exports = {
 		path:path.join(__dirname, 'dist'),
 		// name of bundle file on output
 		filename:  'app.bundle.js'
-	} // result .dist/app.bundle.js
+	}, // result .dist/app.bundle.js
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+				options: {
+					presets: ['@babel/preset-env', '@babel/preset-react']
+				}
+			}
+		]
+	}
 };

@@ -1,1 +1,6 @@
-console.log('Hello World!');
+// entry point of my Application
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('app'));
