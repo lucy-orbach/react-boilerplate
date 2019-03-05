@@ -7,12 +7,16 @@
     "node": true,
     "jest": true
   },
-  "settings": {
+  "settings": {np
     "react": {
       "version": "16.8.3"
     }
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin: jsx-a11y/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -20,7 +24,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react"]
+  "plugins": [ "react", "jsx-a11y"]
 }
 
 /*
