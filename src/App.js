@@ -15,7 +15,7 @@ const App = () => {
         <button onClick={() => setCounter(counter + 1)}>Add more!</button>
         <button onClick={() => setCounter(0)}>Reset</button>
       </div>
-      {counter > 10 && (
+      { counter > 10 && (
         <React.Suspense fallback={'oops'}>
           <Warning />
         </React.Suspense>
