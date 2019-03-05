@@ -3,13 +3,6 @@
   "version": "1.0.0",
   "description": "template for react project",
   "main": "index.js",
-  "scripts": {
-    "build": "webpack  --config webpack.config.prod.js",
-    "dev": "webpack-dev-server --open 'Google Chrome' --config webpack.config.dev.js",
-    "test": "jest",
-    "format": "pretty-quick",
-    "lint": "eslint ./"
-  },
   "author": "Lucy Orbach",
   "license": "ISC",
   "repository": {
@@ -21,6 +14,18 @@
     "url": "https://github.com/lucy-orbach/react-boilerplate/issues"
   },
   "homepage": "https://github.com/lucy-orbach/react-boilerplate#readme",
+  "scripts": {
+    "build": "webpack  --config webpack.config.prod.js",
+    "dev": "webpack-dev-server --open 'Google Chrome' --config webpack.config.dev.js",
+    "test": "jest",
+    "format": "pretty-quick",
+    "lint": "eslint ./"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run lint && npm run test"
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
@@ -43,8 +48,10 @@
     "jest-transform-stub": "^2.0.0",
     "prettier": "^1.16.4",
     "pretty-quick": "^1.10.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-prop-types": "^0.4.0",
     "react-testing-library": "^6.0.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
@@ -55,7 +62,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "prop-types": "^15.7.2",
     "react-hot-loader": "^4.7.2"
   }
 }
